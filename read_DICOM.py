@@ -18,5 +18,18 @@ print(file_list[0])
 ds = pydicom.read_file(f'{dir}/{file_list[0]}')
 print(type(ds))
 
+# выводим информацию из файла
 print(ds)
-print(ds.Modality)
+
+# получаем доступ к конкртеной характеристике
+print(ds.PatientOrientation)
+
+#  смотрим размер файла если перевести в массив пикселей
+print(ds.pixel_array.shape)
+
+# можно посмотреть список открытых ключей (первые пять) и их количество
+print(ds.dir()[:5], len(ds.dir()))
+
+# переводим в массив numpy и проверяем тип и размер
+dicom_array = numpy.array(ds.pixel_array)
+print(type(dicom_array), dicom_array.shape)
