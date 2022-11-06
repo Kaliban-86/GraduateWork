@@ -50,5 +50,5 @@ print(f'В списке {len(data_set_to_preproc)} файлов DICOM, разм�
 data_array_set_to_prepr = numpy.array(data_set_to_preproc)
 print(data_array_set_to_prepr.shape)
 
-plt.imshow(data_array_set_to_prepr[200])
+plt.imshow(data_array_set_to_prepr[100])
 plt.show()
